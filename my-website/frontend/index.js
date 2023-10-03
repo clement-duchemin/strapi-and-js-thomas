@@ -11,7 +11,6 @@ function displayArticles(articles){
         `;
     }
     document.getElementById('articles').innerHTML = divArticles;
-    console.log(divArticles);
 }
 function displaySingleArticle(article){
     let divArticle = `
@@ -23,20 +22,11 @@ function displaySingleArticle(article){
         </div>
     `;
     document.getElementById('single-article').innerHTML = divArticle;
-    console.log(divArticle);
 }
-let page = window.location.search
-console.log(page)
-// find html file in an url
-let index = "index.html"
-let article = "article.html"
-//check if page is index.html or article.html
+
 let url = window.location.href;
 let filename = url.split('/').pop();
-console.log(filename)
 filename = filename.split('.')[0];
-console.log(filename)
-
 if(filename == "index"){
     //display all articles in index.html
     fetch('http://localhost:1337/api/articles')
