@@ -29,7 +29,7 @@ let filename = url.split('/').pop();
 filename = filename.split('.')[0];
 if(filename == "index"){
     //display all articles in index.html
-    fetch('http://localhost:1337/api/articles')
+    fetch('http://localhost:1337/api/articles?sort=title:asc')
     .then(response => response.json())
     .then(data => displayArticles(data.data));
 }else if (filename == "article"){
